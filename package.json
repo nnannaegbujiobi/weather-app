@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@salesforce-ux/design-system": "^2.8.3",
+    "axios": "^0.18.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1"
   },
