@@ -8,7 +8,7 @@ const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&AP
 
 
 function getWeather() {
-  fetch(API_URL)
+  return fetch(API_URL)
     .then(response => response.json())
     .then(result => { 
       console.log(result); 
