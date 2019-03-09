@@ -11,7 +11,7 @@ function getWeather() {
   return fetch(API_URL)
     .then(response => response.json())
     .then(result => { 
-      console.log(result); 
+      // console.log(result); 
     });
 }
 
