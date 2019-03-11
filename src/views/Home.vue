@@ -2,89 +2,46 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <h1>Penrod Weather App</h1>
-    <ul>
+    <!-- <ul>
       <li v-for='(city, index) in cities'>
        Location: {{city.name}} 
         Temperature: {{city.main.temp}}F
         Conditions: {{city.weather[0].description}}
 
-     </li>
+     </li> -->
    </ul>
-       <div class="slds-carousel">
-    <div class="slds-carousel__stage">
-    <span class="slds-carousel__autoplay">
-    <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-pressed="false" title="Stop auto-play">
-    <svg class="slds-button__icon" aria-hidden="true">
-    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#pause"></use>
-    </svg>
-    <span class="slds-assistive-text">Stop auto-play</span>
-    </button>
-    </span>
-    <div class="slds-carousel__panels" style="transform:translateX(-0%)">
-    <div id="content-id-01" class="slds-carousel__panel" role="tabpanel" aria-hidden="false" aria-labelledby="indicator-id-01">
-    <a href="javascript:void(0);" class="slds-carousel__panel-action slds-text-link_reset" tabindex="0">
-    <div class="slds-carousel__image">
-    <img src="http://s3.amazonaws.com/estock/fspid9/11/64/53/2/illinois-jordan-chicago-1164532-h.jpg" alt="Visit App Exchange" /> (chicago)
-    </div>
-    <div class="slds-carousel__content">
-    <h2 class="slds-carousel__content-title">Visit App Exchange</h2>
-    <p>Extend Salesforce with the #1 business marketplace.</p>
-    </div>
-    </a>
-    </div>
-    <div id="content-id-02" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indicator-id-02">
-    <a href="javascript:void(0);" class="slds-carousel__panel-action slds-text-link_reset" tabindex="-1">
-    <div class="slds-carousel__image">
-    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iizI0oT77.BM/v1/1800x-1.jpg" alt="Click to Customize" /> (dallas)
-    </div>
-    <div class="slds-carousel__content">
-    <h2 class="slds-carousel__content-title">Visit App Exchange</h2>
-    <p>Extend Salesforce with the #1 business marketplace.</p>
-    </div>
-    </a>
-    </div>
-    <div id="content-id-02" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indicator-id-02">
-    <a href="javascript:void(0);" class="slds-carousel__panel-action slds-text-link_reset" tabindex="-1">
-    <div class="slds-carousel__image">
-    <img src="https://www.bizjournals.com/#" alt="Click to Customize" /> (milwaukee)
-    </div>
-    <div class="slds-carousel__content">
-    <h2 class="slds-carousel__content-title">Click to Customize</h2>
-    <p>Use the Object Manager to add fields, build layouts, and more.</p>
-    </div>
-    </a>
-    </div>
-    <div id="content-id-03" class="slds-carousel__panel" role="tabpanel" aria-hidden="true" aria-labelledby="indicator-id-03">
-    <a href="javascript:void(0);" class="slds-carousel__panel-action slds-text-link_reset" tabindex="-1">
-    <div class="slds-carousel__image">
-    <img src="http://www.magic925.com/wp-content/uploads/2017/06/232323.jpg" alt="Download SalesforceA" />(minn)
-    </div>
-    <div class="slds-carousel__content">
-    <h2 class="slds-carousel__content-title">Download SalesforceA</h2>
-    <p>Get the mobile app that&#x27;s just for Salesforce admins.</p>
-    </div>
-    </a>
-    </div>
-    </div>
-    <ul class="slds-carousel__indicators" role="tablist">
-    <li class="slds-carousel__indicator" role="presentation">
-    <a id="indicator-id-01" class="slds-carousel__indicator-action slds-is-active" href="javascript:void(0);" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-01" title="Visit App Exchange tab">
-    <span class="slds-assistive-text">Penrod Weather</span>
-    </a>
-    </li>
-    <li class="slds-carousel__indicator" role="presentation">
-    <a id="indicator-id-02" class="slds-carousel__indicator-action" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-02" title="Click to Customize tab">
-    <span class="slds-assistive-text">Click to Customize tab</span>
-    </a>
-    </li>
-    <li class="slds-carousel__indicator" role="presentation">
-    <a id="indicator-id-03" class="slds-carousel__indicator-action" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-03" title="Download SalesforceA tab">
-    <span class="slds-assistive-text">Download SalesforceA tab</span>
-    </a>
-    </li>
-    </ul>
-</div>
-</div>t of data in the api  -->
+   <article class="slds-card" v-for='(city, index) in cities'>
+     <div class="slds-card__header slds-grid">
+       <header class="slds-media slds-media_center slds-has-flexi-truncate">
+         <div class="slds-media__figure">
+           <span class="slds-icon_container slds-icon-standard-location" title="account">
+             <svg class="slds-icon slds-icon_small" aria-hidden="true">
+               <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+             </svg>
+             <span class="slds-assistive-text">account</span>
+           </span>
+         </div>
+         <div class="slds-media__body">
+           <h2 class="slds-card__header-title">
+             <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+               <span>{{city.name}}</span>
+             </a>
+           </h2>
+         </div>
+         <!-- <div class="slds-no-flex">
+           <button class="slds-button slds-button_neutral">New</button>
+         </div> -->
+       </header>
+     </div>
+     <div class="slds-card__body slds-card__body_inner">{{city.main.temp}}F</div>
+     <footer class="slds-card__footer">
+       <a class="slds-card__footer-action" href="javascript:void(0);">{{city.weather[0].description}}
+         <span class="slds-assistive-text">Accounts</span>
+       </a>
+     </footer>
+   </article>
+
+     
     
   </div>
 </template>
@@ -287,8 +244,7 @@ const MOCK_DATA = [
             "dt": 1552170164,
             "id": 5037649,
             "name": "Minneapolis"
-        }
-  ];
+        }];
 
 export default {
   name: 'home',
