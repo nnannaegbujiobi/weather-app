@@ -1,16 +1,91 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <h1>Penrod Weather App</h1>
+    <!-- <h1>Penrod Weather App</h1> -->
     <!-- <ul>
       <li v-for='(city, index) in cities'>
        Location: {{city.name}} 
         Temperature: {{city.main.temp}}F
         Conditions: {{city.weather[0].description}}
 
-     </li> -->
-   </ul>
-   <article class="slds-card" v-for='(city, index) in cities'>
+     </li>
+     
+   </ul> -->
+
+
+<div class="demo-only" style="height:800px">
+  <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="welcome-mat-100-label" aria-describedby="welcome-mat-100-content" aria-modal="true">
+    <div class="slds-modal__container">
+      <header class="slds-modal__header slds-modal__header_empty">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+          <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </header>
+      <div class="slds-modal__content" id="welcome-mat-100-content">
+        <div class="slds-welcome-mat">
+          <div class="slds-welcome-mat__content slds-grid">
+            <div class="slds-welcome-mat__info slds-size_1-of-2">
+              <div class="slds-welcome-mat__info-content">
+                <h2 id="welcome-mat-100-label" class="slds-welcome-mat__info-title">The Penrod Experience is here!</h2>
+                <p class="slds-welcome-mat__info-description slds-text-longform">The Salesforce solution to making your business a force to be reckoned with. Through innonvative technology and execptional service, we help our clients become more engaged with their customers and more efficient in their business processes.</p>
+                <div class="slds-welcome-mat__info-progress">
+                  <div class="slds-welcome-mat__info-badge-container">
+                    <img class="slds-welcome-mat__info-badge" src="https://dj34aghzwe-flywheel.netdna-ssl.com/wp-content/uploads/2018/08/penrod-logo1.svg" width="50" height="50" alt="" />
+                    <span class="slds-icon_container slds-icon_container_circle slds-icon-action-check" title="Completed">
+                      <svg class="slds-icon slds-welcome-mat__icon-check slds-icon_xx-small" aria-hidden="true">
+                        <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#check"></use>
+                      </svg>
+                      <span class="slds-assistive-text">Completed</span>
+                    </span>
+                  </div>
+                  <p>
+                    <strong>Sales,Marketing,Service,and way more!</strong>
+                  </p>
+                </div>
+              </div>      
+            </div>
+            <ul class="slds-welcome-mat__tiles slds-size_1-of-2">
+              <li class="slds-welcome-mat__tile" li v-for='(city, index) in cities'>
+                <a href="javascript:void(0);" class="slds-box slds-box_link slds-media">
+                  <div class="slds-media__figure slds-media__figure_fixed-width slds-align_absolute-center">
+                    <div class="slds-welcome-mat__tile-figure">
+                      <div class="slds-welcome-mat__tile-icon-container">
+                        <span class="slds-icon_container slds-icon-utility-location">
+                          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#location"></use>
+                          </svg>
+                        </span>
+                        <span class="slds-icon_container slds-icon_container_circle slds-icon-action-check" title="Completed">
+                          <svg class="slds-icon slds-welcome-mat__icon-check" aria-hidden="true">
+                            <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#check"></use>
+                          </svg>
+                          <span class="slds-assistive-text">Completed</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-media__body">
+                    <div class="slds-welcome-mat__tile-body">
+                      <h3 class="slds-welcome-mat__tile-title"> Penrod {{city.name}} </h3>
+                      <p class="slds-welcome-mat__tile-description">{{city.main.temp}}F, {{city.weather[0].description}}.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+   
+    
+ <!-- <article class="slds-card" v-for='(city, index) in cities'>
      <div class="slds-card__header slds-grid">
        <header class="slds-media slds-media_center slds-has-flexi-truncate">
          <div class="slds-media__figure">
@@ -28,9 +103,9 @@
              </a>
            </h2>
          </div>
-         <!-- <div class="slds-no-flex">
+          <div class="slds-no-flex">
            <button class="slds-button slds-button_neutral">New</button>
-         </div> -->
+         </div>
        </header>
      </div>
      <div class="slds-card__body slds-card__body_inner">{{city.main.temp}}F</div>
@@ -39,14 +114,14 @@
          <span class="slds-assistive-text">Accounts</span>
        </a>
      </footer>
-   </article>
-
+   </article>  -->
      
     
   </div>
 </template>
 
 <script>
+
 // @ is an alias to /src
 // import API from '@/lib/API';
 
@@ -257,11 +332,21 @@ export default {
     const API_KEY = 'd41563fcfae1b65a7d33342483a4157a';
     const CITY_IDS = [4684888,4887398,5263045,5037649];
 
-    const API_URL = `http://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}a&units=imperial`;
-    this.cities = MOCK_DATA;
-    //fetch(API_URL)
-      //.then(response => response.json())
-      //.then(result => this.cities = result);
-  } 
+    const API_URL = `http://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}&units=imperial`;
+    //this.cities = MOCK_DATA;
+    
+    fetch(API_URL) 
+      .then(response => response.json())
+      .then(result => {
+        console.log("result", result);
+        this.cities = result.list;
+      });
+   
+  },
+ 
 };
 </script>
+
+<style type="text/css">
+  .black { background: black }
+</style>
