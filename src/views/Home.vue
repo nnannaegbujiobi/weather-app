@@ -292,7 +292,7 @@ export default {
     const API_KEY = 'd41563fcfae1b65a7d33342483a4157a';
     const CITY_IDS = [4684888,4887398,5263045,5037649];
 
-    const API_URL = `http://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}&units=imperial`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}&units=imperial`;
     
     fetch(API_URL) 
       .then(response => response.json())
