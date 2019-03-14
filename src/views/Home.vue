@@ -1,17 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <!-- <h1>Penrod Weather App</h1> -->
-    <!-- <ul>
-      <li v-for='(city, index) in cities'>
-       Location: {{city.name}} 
-        Temperature: {{city.main.temp}}F
-        Conditions: {{city.weather[0].description}}
-
-     </li>
-     
-   </ul> -->
-  
 <div class="demo-only" style="width:800px">
   <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small" aria-labelledby="welcome-mat-100-label" aria-describedby="welcome-mat-100-content" aria-modal="true">
     <div class="slds-modal__container" style="height: 1200px; width: 1200">
@@ -292,7 +280,7 @@ export default {
     const API_KEY = 'd41563fcfae1b65a7d33342483a4157a';
     const CITY_IDS = [4684888,4887398,5263045,5037649];
 
-    const API_URL = `http://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}&units=imperial`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/group?id=${CITY_IDS}&APPID=${API_KEY}&units=imperial`;
     
     fetch(API_URL) 
       .then(response => response.json())
@@ -309,9 +297,6 @@ export default {
 <style> 
 img {
   width: 20%;
-}
-body .demo-only {
-  width: 800px;
 }
 
 </style>
